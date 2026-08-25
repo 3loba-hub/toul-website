@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://3loba-hub.github.io/toul-website/sitemap.xml
+Sitemap: https://toul.3lobas999.workers.dev/sitemap.xml
