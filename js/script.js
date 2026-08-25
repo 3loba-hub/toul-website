@@ -1,20 +1,17 @@
 (function () {
   const html = document.documentElement;
   const toggle = document.getElementById('lang-toggle');
-  const translatable = document.querySelectorAll('[data-en][data-ar]');
 
+  // Both languages are present in the HTML; CSS shows the active one based
+  // on html[lang], so switching languages is just an attribute change.
   function applyLang(lang) {
     html.lang = lang;
     html.dir = lang === 'ar' ? 'rtl' : 'ltr';
-    translatable.forEach((el) => {
-      el.innerHTML = lang === 'ar' ? el.dataset.ar : el.dataset.en;
-    });
     localStorage.setItem('toul-lang', lang);
   }
 
   toggle.addEventListener('click', () => {
-    const next = html.lang === 'ar' ? 'en' : 'ar';
-    applyLang(next);
+    applyLang(html.lang === 'ar' ? 'en' : 'ar');
   });
 
   const saved = localStorage.getItem('toul-lang');

@@ -50,6 +50,16 @@ html[lang="ar"] h3 {
 
 p { margin: 0 0 1em; }
 
+/* ---------- bilingual text visibility ----------
+   Both languages ship in the HTML so search engines can read the Arabic;
+   only the active one is rendered. Keyed off html[lang] so the existing
+   Arabic font and RTL rules above stay in sync automatically. */
+
+.l-ar { display: none; }
+
+html[lang="ar"] .l-en { display: none; }
+html[lang="ar"] .l-ar { display: inline; }
+
 .eyebrow {
   display: inline-block;
   font-size: 0.78rem;
